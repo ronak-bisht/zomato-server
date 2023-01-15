@@ -6,6 +6,7 @@ const jwt=require('jsonwebtoken')
 const authenticate=require('./middleware/authenticate.js')
 const Restaurant=require('./restaurantSchema.js')
 const { json } = require('express')
+
  Router.post('/register',(req,res)=>{
     const {name,email,password}=req.body
     if(!name || !email || !password){

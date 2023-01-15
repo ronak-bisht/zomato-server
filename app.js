@@ -4,8 +4,12 @@ const app=express();
 const Router=require('./auth.js')
 const mongoose=require('mongoose')
 const cookies=require('cookie-parser')
+const cors=require('cors')
 const DB="mongodb+srv://root:babyboss@cluster0.5mes4.mongodb.net/youtube?retryWrites=true&w=majority"
 mongoose.set('strictQuery',false)
+
+app.use(cors())
+
 mongoose.connect(DB).then(()=>{
     console.log('connection Succesfull')
 }).catch((err)=>{
